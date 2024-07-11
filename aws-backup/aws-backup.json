@@ -1,0 +1,1022 @@
+{
+    "annotations": {
+      "list": [
+        {
+          "builtIn": 1,
+          "datasource": {
+            "type": "datasource",
+            "uid": "grafana"
+          },
+          "enable": true,
+          "hide": true,
+          "iconColor": "rgba(0, 211, 255, 1)",
+          "name": "Annotations & Alerts",
+          "type": "dashboard"
+        }
+      ]
+    },
+    "description": "Visualize AWS Backup metrics",
+    "editable": true,
+    "fiscalYearStartMonth": 0,
+    "gnetId": 707,
+    "graphTooltip": 0,
+    "id": 23,
+    "links": [],
+    "liveNow": false,
+    "panels": [
+      {
+        "datasource": {
+          "type": "cloudwatch",
+          "uid": "$datasource"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              }
+            },
+            "mappings": [],
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 10,
+          "w": 12,
+          "x": 0,
+          "y": 0
+        },
+        "id": 17,
+        "links": [],
+        "options": {
+          "displayLabels": [
+            "percent"
+          ],
+          "legend": {
+            "displayMode": "list",
+            "placement": "right",
+            "showLegend": true,
+            "values": []
+          },
+          "pieType": "pie",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "9.5.2",
+        "targets": [
+          {
+            "alias": "",
+            "application": {
+              "filter": ""
+            },
+            "datasource": {
+              "uid": "$datasource"
+            },
+            "dimensions": {
+              "BackupVaultName": "$backupvaultname",
+              "ResourceType": "$resourcetype"
+            },
+            "expression": "",
+            "functions": [],
+            "group": {
+              "filter": ""
+            },
+            "host": {
+              "filter": ""
+            },
+            "id": "",
+            "item": {
+              "filter": ""
+            },
+            "label": "",
+            "matchExact": true,
+            "metricEditorMode": 0,
+            "metricName": "NumberOfBackupJobsCompleted",
+            "metricQueryType": 0,
+            "mode": 0,
+            "namespace": "AWS/Backup",
+            "options": {
+              "showDisabledItems": false
+            },
+            "period": "",
+            "refId": "A",
+            "region": "$region",
+            "sql": {
+              "from": {
+                "property": {
+                  "name": "AWS/Backup",
+                  "type": "string"
+                },
+                "type": "property"
+              },
+              "select": {
+                "name": "COUNT",
+                "parameters": [
+                  {
+                    "name": "NumberOfBackupJobsCompleted",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            },
+            "sqlExpression": "SELECT COUNT(NumberOfBackupJobsCompleted) FROM \"AWS/Backup\"",
+            "statistic": "Sum"
+          }
+        ],
+        "title": "Backup Jobs Completed Breakdown",
+        "type": "piechart"
+      },
+      {
+        "datasource": {
+          "type": "cloudwatch",
+          "uid": "$datasource"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              }
+            },
+            "mappings": [],
+            "unit": "short"
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 10,
+          "w": 12,
+          "x": 12,
+          "y": 0
+        },
+        "id": 21,
+        "links": [],
+        "options": {
+          "displayLabels": [
+            "percent"
+          ],
+          "legend": {
+            "displayMode": "list",
+            "placement": "right",
+            "showLegend": true,
+            "values": []
+          },
+          "pieType": "pie",
+          "reduceOptions": {
+            "calcs": [
+              "lastNotNull"
+            ],
+            "fields": "",
+            "values": false
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "9.5.2",
+        "targets": [
+          {
+            "alias": "",
+            "application": {
+              "filter": ""
+            },
+            "datasource": {
+              "uid": "$datasource"
+            },
+            "dimensions": {
+              "BackupVaultName": "$backupvaultname",
+              "ResourceType": "$resourcetype"
+            },
+            "expression": "",
+            "functions": [],
+            "group": {
+              "filter": ""
+            },
+            "host": {
+              "filter": ""
+            },
+            "id": "",
+            "item": {
+              "filter": ""
+            },
+            "label": "",
+            "matchExact": true,
+            "metricEditorMode": 0,
+            "metricName": "NumberOfBackupJobsFailed",
+            "metricQueryType": 0,
+            "mode": 0,
+            "namespace": "AWS/Backup",
+            "options": {
+              "showDisabledItems": false
+            },
+            "period": "",
+            "refId": "A",
+            "region": "$region",
+            "sql": {
+              "from": {
+                "property": {
+                  "name": "AWS/Backup",
+                  "type": "string"
+                },
+                "type": "property"
+              },
+              "select": {
+                "name": "COUNT",
+                "parameters": [
+                  {
+                    "name": "NumberOfBackupJobsCompleted",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            },
+            "sqlExpression": "SELECT COUNT(NumberOfBackupJobsCompleted) FROM \"AWS/Backup\"",
+            "statistic": "Sum"
+          }
+        ],
+        "title": "Backup Jobs Failed Breakdown",
+        "type": "piechart"
+      },
+      {
+        "datasource": {
+          "type": "cloudwatch",
+          "uid": "$datasource"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 10,
+          "w": 12,
+          "x": 0,
+          "y": 10
+        },
+        "id": 16,
+        "links": [],
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "9.5.2",
+        "targets": [
+          {
+            "alias": "",
+            "application": {
+              "filter": ""
+            },
+            "datasource": {
+              "uid": "$datasource"
+            },
+            "dimensions": {
+              "BackupVaultName": "$backupvaultname",
+              "ResourceType": "$resourcetype"
+            },
+            "expression": "",
+            "functions": [],
+            "group": {
+              "filter": ""
+            },
+            "host": {
+              "filter": ""
+            },
+            "id": "",
+            "item": {
+              "filter": ""
+            },
+            "label": "",
+            "matchExact": true,
+            "metricEditorMode": 0,
+            "metricName": "NumberOfBackupJobsCompleted",
+            "metricQueryType": 0,
+            "mode": 0,
+            "namespace": "AWS/Backup",
+            "options": {
+              "showDisabledItems": false
+            },
+            "period": "",
+            "refId": "A",
+            "region": "$region",
+            "sql": {
+              "from": {
+                "property": {
+                  "name": "AWS/Backup",
+                  "type": "string"
+                },
+                "type": "property"
+              },
+              "select": {
+                "name": "COUNT",
+                "parameters": [
+                  {
+                    "name": "NumberOfBackupJobsCompleted",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            },
+            "sqlExpression": "SELECT COUNT(NumberOfBackupJobsCompleted) FROM \"AWS/Backup\"",
+            "statistic": "Sum"
+          }
+        ],
+        "title": "Number Of Backup Jobs Completed",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "cloudwatch",
+          "uid": "$datasource"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 10,
+          "w": 12,
+          "x": 12,
+          "y": 10
+        },
+        "id": 18,
+        "links": [],
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "9.5.2",
+        "targets": [
+          {
+            "alias": "",
+            "application": {
+              "filter": ""
+            },
+            "datasource": {
+              "uid": "$datasource"
+            },
+            "dimensions": {
+              "BackupVaultName": "$backupvaultname",
+              "ResourceType": "$resourcetype"
+            },
+            "expression": "",
+            "functions": [],
+            "group": {
+              "filter": ""
+            },
+            "host": {
+              "filter": ""
+            },
+            "id": "",
+            "item": {
+              "filter": ""
+            },
+            "label": "",
+            "matchExact": true,
+            "metricEditorMode": 0,
+            "metricName": "NumberOfBackupJobsFailed",
+            "metricQueryType": 0,
+            "mode": 0,
+            "namespace": "AWS/Backup",
+            "options": {
+              "showDisabledItems": false
+            },
+            "period": "",
+            "refId": "A",
+            "region": "$region",
+            "sql": {
+              "from": {
+                "property": {
+                  "name": "AWS/Backup",
+                  "type": "string"
+                },
+                "type": "property"
+              },
+              "select": {
+                "name": "COUNT",
+                "parameters": [
+                  {
+                    "name": "NumberOfBackupJobsCompleted",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            },
+            "sqlExpression": "SELECT COUNT(NumberOfBackupJobsCompleted) FROM \"AWS/Backup\"",
+            "statistic": "Sum"
+          }
+        ],
+        "title": "Number Of Backup Jobs Failed",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "cloudwatch",
+          "uid": "$datasource"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 10,
+          "w": 12,
+          "x": 0,
+          "y": 20
+        },
+        "id": 20,
+        "links": [],
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "9.5.2",
+        "targets": [
+          {
+            "alias": "",
+            "application": {
+              "filter": ""
+            },
+            "datasource": {
+              "uid": "$datasource"
+            },
+            "dimensions": {
+              "BackupVaultName": "$backupvaultname",
+              "ResourceType": "$resourcetype"
+            },
+            "expression": "",
+            "functions": [],
+            "group": {
+              "filter": ""
+            },
+            "host": {
+              "filter": ""
+            },
+            "id": "",
+            "item": {
+              "filter": ""
+            },
+            "label": "",
+            "matchExact": true,
+            "metricEditorMode": 0,
+            "metricName": "NumberOfBackupJobsPending",
+            "metricQueryType": 0,
+            "mode": 0,
+            "namespace": "AWS/Backup",
+            "options": {
+              "showDisabledItems": false
+            },
+            "period": "",
+            "refId": "A",
+            "region": "$region",
+            "sql": {
+              "from": {
+                "property": {
+                  "name": "AWS/Backup",
+                  "type": "string"
+                },
+                "type": "property"
+              },
+              "select": {
+                "name": "COUNT",
+                "parameters": [
+                  {
+                    "name": "NumberOfBackupJobsCompleted",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            },
+            "sqlExpression": "SELECT COUNT(NumberOfBackupJobsCompleted) FROM \"AWS/Backup\"",
+            "statistic": "Sum"
+          }
+        ],
+        "title": "Number Of Backup Jobs Pending",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "type": "cloudwatch",
+          "uid": "$datasource"
+        },
+        "fieldConfig": {
+          "defaults": {
+            "color": {
+              "mode": "palette-classic"
+            },
+            "custom": {
+              "axisCenteredZero": false,
+              "axisColorMode": "text",
+              "axisLabel": "",
+              "axisPlacement": "auto",
+              "barAlignment": 0,
+              "drawStyle": "line",
+              "fillOpacity": 0,
+              "gradientMode": "none",
+              "hideFrom": {
+                "legend": false,
+                "tooltip": false,
+                "viz": false
+              },
+              "lineInterpolation": "linear",
+              "lineWidth": 1,
+              "pointSize": 5,
+              "scaleDistribution": {
+                "type": "linear"
+              },
+              "showPoints": "auto",
+              "spanNulls": false,
+              "stacking": {
+                "group": "A",
+                "mode": "none"
+              },
+              "thresholdsStyle": {
+                "mode": "off"
+              }
+            },
+            "mappings": [],
+            "thresholds": {
+              "mode": "absolute",
+              "steps": [
+                {
+                  "color": "green",
+                  "value": null
+                },
+                {
+                  "color": "red",
+                  "value": 80
+                }
+              ]
+            }
+          },
+          "overrides": []
+        },
+        "gridPos": {
+          "h": 10,
+          "w": 12,
+          "x": 12,
+          "y": 20
+        },
+        "id": 19,
+        "links": [],
+        "options": {
+          "legend": {
+            "calcs": [],
+            "displayMode": "list",
+            "placement": "bottom",
+            "showLegend": true
+          },
+          "tooltip": {
+            "mode": "single",
+            "sort": "none"
+          }
+        },
+        "pluginVersion": "9.5.2",
+        "targets": [
+          {
+            "alias": "",
+            "application": {
+              "filter": ""
+            },
+            "datasource": {
+              "uid": "$datasource"
+            },
+            "dimensions": {
+              "BackupVaultName": "$backupvaultname",
+              "ResourceType": "$resourcetype"
+            },
+            "expression": "",
+            "functions": [],
+            "group": {
+              "filter": ""
+            },
+            "host": {
+              "filter": ""
+            },
+            "id": "",
+            "item": {
+              "filter": ""
+            },
+            "label": "",
+            "matchExact": true,
+            "metricEditorMode": 0,
+            "metricName": "NumberOfBackupJobsRunning",
+            "metricQueryType": 0,
+            "mode": 0,
+            "namespace": "AWS/Backup",
+            "options": {
+              "showDisabledItems": false
+            },
+            "period": "",
+            "refId": "A",
+            "region": "$region",
+            "sql": {
+              "from": {
+                "property": {
+                  "name": "AWS/Backup",
+                  "type": "string"
+                },
+                "type": "property"
+              },
+              "select": {
+                "name": "COUNT",
+                "parameters": [
+                  {
+                    "name": "NumberOfBackupJobsCompleted",
+                    "type": "functionParameter"
+                  }
+                ],
+                "type": "function"
+              }
+            },
+            "sqlExpression": "SELECT COUNT(NumberOfBackupJobsCompleted) FROM \"AWS/Backup\"",
+            "statistic": "Sum"
+          }
+        ],
+        "title": "Number Of Backup Jobs Running",
+        "type": "timeseries"
+      },
+      {
+        "datasource": {
+          "uid": "$datasource"
+        },
+        "editable": true,
+        "error": false,
+        "gridPos": {
+          "h": 3,
+          "w": 24,
+          "x": 0,
+          "y": 30
+        },
+        "id": 2,
+        "isNew": true,
+        "links": [],
+        "options": {
+          "code": {
+            "language": "plaintext",
+            "showLineNumbers": false,
+            "showMiniMap": false
+          },
+          "content": "<a style=\"float: right\" href=\"https://github.com/keivinonline/grafana-dashboards\" target=\"_blank\" title=\"Dashboard maintained by keivinonline\"><img src=\"https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png\" height=\"30px\" /></a>\n<div style=\"float: left\">\n<a style=\"xfloat: left\"  target=\"_blank\" href=\"https://docs.aws.amazon.com/aws-backup/latest/devguide/cloudwatch.html\">AWS Backup metrics with Amazon CloudWatch Documentation</a> | \n<a style=\"xfloat: left\"  target=\"_blank\" href=\"https://grafana.com/dashboards/xxx\">Installed from Grafana.com dashboards</a\n</div>\n<div style=\"clear:both; width:100%;height:0;font-size:0;\"></div>",
+          "mode": "html"
+        },
+        "pluginVersion": "9.5.2",
+        "targets": [
+          {
+            "datasource": {
+              "uid": "$datasource"
+            },
+            "refId": "A"
+          }
+        ],
+        "title": "Documentation",
+        "type": "text"
+      }
+    ],
+    "refresh": "",
+    "schemaVersion": 38,
+    "style": "dark",
+    "tags": [],
+    "templating": {
+      "list": [
+        {
+          "current": {
+            "selected": false,
+            "text": "CloudWatch",
+            "value": "CloudWatch"
+          },
+          "hide": 0,
+          "includeAll": false,
+          "label": "Datasource",
+          "multi": false,
+          "name": "datasource",
+          "options": [],
+          "query": "cloudwatch",
+          "queryValue": "",
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "type": "datasource"
+        },
+        {
+          "current": {
+            "selected": false,
+            "text": "default",
+            "value": "default"
+          },
+          "datasource": {
+            "uid": "$datasource"
+          },
+          "definition": "",
+          "hide": 0,
+          "includeAll": false,
+          "label": "Region",
+          "multi": false,
+          "name": "region",
+          "options": [],
+          "query": "regions()",
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "tagValuesQuery": "",
+          "tagsQuery": "",
+          "type": "query",
+          "useTags": false
+        },
+        {
+          "allValue": "*",
+          "current": {
+            "selected": false,
+            "text": "All",
+            "value": "$__all"
+          },
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "${datasource}"
+          },
+          "definition": "",
+          "hide": 0,
+          "includeAll": true,
+          "label": "BackupVaultName",
+          "multi": false,
+          "name": "backupvaultname",
+          "options": [],
+          "query": {
+            "dimensionKey": "BackupVaultName",
+            "metricName": "NumberOfBackupJobsCreated",
+            "namespace": "AWS/Backup",
+            "queryType": "dimensionValues",
+            "refId": "CloudWatchVariableQueryEditor-VariableQuery",
+            "region": "$region"
+          },
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        },
+        {
+          "allValue": "*",
+          "current": {
+            "selected": false,
+            "text": "All",
+            "value": "$__all"
+          },
+          "datasource": {
+            "type": "cloudwatch",
+            "uid": "${datasource}"
+          },
+          "definition": "",
+          "hide": 0,
+          "includeAll": true,
+          "label": "ResourceType",
+          "multi": false,
+          "name": "resourcetype",
+          "options": [],
+          "query": {
+            "dimensionFilters": {
+              "BackupVaultName": "$backupvaultname"
+            },
+            "dimensionKey": "ResourceType",
+            "metricName": "NumberOfBackupJobsCreated",
+            "namespace": "AWS/Backup",
+            "queryType": "dimensionValues",
+            "refId": "CloudWatchVariableQueryEditor-VariableQuery",
+            "region": "$region"
+          },
+          "refresh": 1,
+          "regex": "",
+          "skipUrlSync": false,
+          "sort": 0,
+          "type": "query"
+        }
+      ]
+    },
+    "time": {
+      "from": "now-7d",
+      "to": "now"
+    },
+    "timepicker": {
+      "refresh_intervals": [
+        "5s",
+        "10s",
+        "30s",
+        "1m",
+        "5m",
+        "15m",
+        "30m",
+        "1h",
+        "2h",
+        "1d"
+      ],
+      "time_options": [
+        "5m",
+        "15m",
+        "1h",
+        "6h",
+        "12h",
+        "24h",
+        "2d",
+        "7d",
+        "30d"
+      ]
+    },
+    "timezone": "browser",
+    "title": "AWS Backup",
+    "uid": "d10700ae-5a2d-45ef-8092-d31f06b4b66a",
+    "version": 1,
+    "weekStart": ""
+  }
