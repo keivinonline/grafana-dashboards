@@ -1,4 +1,47 @@
 {
+    "__inputs": [
+      {
+        "name": "DS_CLOUDWATCH",
+        "label": "CloudWatch",
+        "description": "",
+        "type": "datasource",
+        "pluginId": "cloudwatch",
+        "pluginName": "CloudWatch"
+      }
+    ],
+    "__elements": {},
+    "__requires": [
+      {
+        "type": "datasource",
+        "id": "cloudwatch",
+        "name": "CloudWatch",
+        "version": "1.0.0"
+      },
+      {
+        "type": "grafana",
+        "id": "grafana",
+        "name": "Grafana",
+        "version": "9.5.2"
+      },
+      {
+        "type": "panel",
+        "id": "piechart",
+        "name": "Pie chart",
+        "version": ""
+      },
+      {
+        "type": "panel",
+        "id": "text",
+        "name": "Text",
+        "version": ""
+      },
+      {
+        "type": "panel",
+        "id": "timeseries",
+        "name": "Time series",
+        "version": ""
+      }
+    ],
     "annotations": {
       "list": [
         {
@@ -20,7 +63,7 @@
     "fiscalYearStartMonth": 0,
     "gnetId": 707,
     "graphTooltip": 0,
-    "id": 23,
+    "id": null,
     "links": [],
     "liveNow": false,
     "panels": [
@@ -849,7 +892,7 @@
             "showLineNumbers": false,
             "showMiniMap": false
           },
-          "content": "<a style=\"float: right\" href=\"https://github.com/keivinonline/grafana-dashboards\" target=\"_blank\" title=\"Dashboard maintained by keivinonline\"><img src=\"https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png\" height=\"30px\" /></a>\n<div style=\"float: left\">\n<a style=\"xfloat: left\"  target=\"_blank\" href=\"https://docs.aws.amazon.com/aws-backup/latest/devguide/cloudwatch.html\">AWS Backup metrics with Amazon CloudWatch Documentation</a> | \n<a style=\"xfloat: left\"  target=\"_blank\" href=\"https://grafana.com/dashboards/xxx\">Installed from Grafana.com dashboards</a\n</div>\n<div style=\"clear:both; width:100%;height:0;font-size:0;\"></div>",
+          "content": "<a style=\"float: right\" href=\"https://github.com/keivinonline/grafana-dashboards\" target=\"_blank\" title=\"Dashboard maintained by keivinonline\"><img src=\"https://github.githubassets.com/assets/GitHub-Mark-ea2971cee799.png\" height=\"30px\" /></a>\n<div style=\"float: left\">\n<a style=\"xfloat: left\"  target=\"_blank\" href=\"https://docs.aws.amazon.com/aws-backup/latest/devguide/cloudwatch.html\">AWS Backup metrics with Amazon CloudWatch Documentation</a> | \n<a style=\"xfloat: left\"  target=\"_blank\" href=\"https://grafana.com/dashboards/707\">Installed from Grafana.com dashboards</a\n</div>\n<div style=\"clear:both; width:100%;height:0;font-size:0;\"></div>",
           "mode": "html"
         },
         "pluginVersion": "9.5.2",
@@ -891,11 +934,7 @@
           "type": "datasource"
         },
         {
-          "current": {
-            "selected": false,
-            "text": "default",
-            "value": "default"
-          },
+          "current": {},
           "datasource": {
             "uid": "$datasource"
           },
@@ -918,14 +957,10 @@
         },
         {
           "allValue": "*",
-          "current": {
-            "selected": false,
-            "text": "All",
-            "value": "$__all"
-          },
+          "current": {},
           "datasource": {
             "type": "cloudwatch",
-            "uid": "${datasource}"
+            "uid": "${DS_CLOUDWATCH}"
           },
           "definition": "",
           "hide": 0,
@@ -950,14 +985,10 @@
         },
         {
           "allValue": "*",
-          "current": {
-            "selected": false,
-            "text": "All",
-            "value": "$__all"
-          },
+          "current": {},
           "datasource": {
             "type": "cloudwatch",
-            "uid": "${datasource}"
+            "uid": "${DS_CLOUDWATCH}"
           },
           "definition": "",
           "hide": 0,
@@ -1017,6 +1048,6 @@
     "timezone": "browser",
     "title": "AWS Backup",
     "uid": "d10700ae-5a2d-45ef-8092-d31f06b4b66a",
-    "version": 1,
+    "version": 21,
     "weekStart": ""
   }
